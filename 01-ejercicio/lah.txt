@@ -1,0 +1,22 @@
+PERMISOS DE ARCHIVOS Y DIRECTORIOS - ~/laboratorio-cli
+========================================================
+
+Ruta                          Nombre                  Permisos      Secuencia r-w-x (dueno/grupo/otros)   Octal
+------------------------------ ----------------------- ------------- -------------------------------------- ------
+~/laboratorio-cli/            README.txt              -rw-rw-r--    420 / 420 / 400                        664
+~/laboratorio-cli/            docs                    drwxrwxr-x    421 / 421 / 401                        775
+~/laboratorio-cli/            docs{guia,notas}.md     -rw-rw-r--    420 / 420 / 400                        664
+~/laboratorio-cli/            logs                    drwxrwxr-x    421 / 421 / 401                        775
+~/laboratorio-cli/            src                     drwxrwxr-x    421 / 421 / 401                        775
+~/laboratorio-cli/docs/       guia.md                 -rw-rw-r--    420 / 420 / 400                        664
+~/laboratorio-cli/docs/       notas.md                -rw-rw-r--    420 / 420 / 400                        664
+~/laboratorio-cli/logs/       README.txt              -rw-rw-r--    420 / 420 / 400                        664
+~/laboratorio-cli/logs/       app.log                 -rw-rw-r--    420 / 420 / 400                        664
+~/laboratorio-cli/logs/       app.logREADME.txt       -rw-rw-r--    420 / 420 / 400                        664
+~/laboratorio-cli/src/        main.py                 -rw-rw-r--    420 / 420 / 400                        664
+~/laboratorio-cli/src/        test.py                 -rw-rw-r--    420 / 420 / 400                        664
+
+Nota sobre la transformacion: cada bloque de permisos (rwx) se representa como una secuencia
+de tres digitos fijos -4 (lectura), 2 (escritura), 1 (ejecucion)- colocando un 0 cuando el
+permiso no esta activo. Asi, rw- se escribe como 420 y rwx como 421. Sumando cada secuencia
+se obtiene el digito octal final: 420 -> 6 y 421 -> 7. Por eso rw-rw-r-- = 664 y rwxrwxr-x = 775.
