@@ -24,13 +24,13 @@
 ## Evidencia (capturas de pantalla)
 
 ### 1. Directorio raíz `~/laboratorio-cli`
-![Listado del directorio raíz](imagenes/img1_raiz.png)
+![Listado del directorio raíz](img1_raiz.png)
 
 ### 2. Directorio `~/laboratorio-cli/docs`
-![Listado del directorio docs](imagenes/img2_docs.png)
+![Listado del directorio docs](img2_docs.png)
 
 ### 3. Directorio `~/laboratorio-cli/logs`
-![Listado del directorio logs](imagenes/img3_logs.png)
+![Listado del directorio logs](img3_logs.png)
 
 ### 4. Directorio `~/laboratorio-cli/src`
-![Listado del directorio src](imagenes/img4_src.png)
+![Listado del directorio src](img4_src.png)
