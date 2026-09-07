@@ -6,46 +6,46 @@ En esta práctica se trabajó dentro del directorio `~/laboratorio-cli`, practic
 
 Se navegó de forma encadenada entre carpetas usando `cd`: primero a `laboratorio-cli`, luego a `docs`, después a `../src`, y finalmente se listó su contenido con `ls`.
 
-![Navegación con cd entre directorios](cd_navegacion.jpeg)
+![Navegación con cd entre directorios](../imagenes/08_cd_2026-08-26.jpeg)
 
 ## Regresar al directorio anterior con `cd -`
 
 Con `cd -` se regresó al directorio previo (`docs`) y se listó su contenido con `ls`.
 
-![Uso de cd - y ls](cd_guion_ls.jpeg)
+![Uso de cd - y ls](../imagenes/09_cd_2026-08-26.jpeg)
 
 ## Filtrar el historial de comandos
 
 Se usó `history 10 | grep 'cd'` para mostrar las últimas entradas del historial que contienen el comando `cd`.
 
-![Historial filtrado con grep](history_grep_cd.jpeg)
+![Historial filtrado con grep](../imagenes/10_history_2026-08-26.jpeg)
 
 ## Crear un alias
 
 Se creó el alias `ll` con `alias ll='ls -lah --color=auto'` y luego se probó ejecutándolo.
 
-![Creación del alias ll](alias_ll_crear.jpeg)
+![Creación del alias ll](../imagenes/11_alias_2026-08-26.jpeg)
 
 ## Verificar un alias con `type`
 
 Con `type ll` se comprobó que `ll` es efectivamente un alias de `ls -lah --color=auto`.
 
-![Verificación del alias con type](type_ll.jpeg)
+![Verificación del alias con type](../imagenes/12_type_2026-08-26.jpeg)
 
 ## Usar el alias
 
 Se ejecutó `ll docs` para listar el contenido de la carpeta `docs` usando el alias creado.
 
-![Uso del alias ll sobre docs](ll_docs.jpeg)
+![Uso del alias ll sobre docs](../imagenes/13_ll_2026-08-26.jpeg)
 
 ## Eliminar un alias
 
 Con `unalias ll` se eliminó el alias; al volver a ejecutar `ll` la terminal indica que la orden ya no existe.
 
-![Eliminación del alias con unalias](unalias_ll.jpeg)
+![Eliminación del alias con unalias](../imagenes/14_unalias_2026-08-26.jpeg)
 
 ## Listar todos los alias
 
 Finalmente, con `alias` (sin argumentos) se mostraron todos los alias definidos en la sesión.
 
-![Lista completa de alias](alias_lista.jpeg)
+![Lista completa de alias](../imagenes/15_alias_2026-08-26.jpeg)
