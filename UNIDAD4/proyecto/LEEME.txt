@@ -1,0 +1,45 @@
+PROYECTO · BITÁCORA LINUX 3C
+Octavio Muñoz Hernández · Ingeniería de Software, UAZ
+Servidor: Ubuntu 26.04 (hoja@hoja-VirtualBox) · Dominio: hojita.linux
+
+CONTENIDO
+  index.html                Página: comandos de clase por unidad + verificador de .ssh.
+                            Es un solo archivo; las capturas de clase van incluidas.
+  scripts/dns.sh            BIND9 (DNS) + Nginx (web) con IP fija.
+  scripts/ssh-generator.sh  OpenSSH: root solo con llave Ed25519.
+  capturas/pagina/          Capturas de cada sección de la página.
+  capturas/practica/        Capturas de la práctica (SSH, DNS y la página en Chrome).
+
+EJECUCIÓN EN LA VM (terminal de Ubuntu, no por SSH)
+  1. Copiar los scripts a ~/scripts y entrar:
+       cd ~/scripts
+  2. DNS y sitio web (dominio: hojita.linux):
+       sudo bash dns.sh
+  3. Publicar esta página:
+       cp index.html ~/scripts/sitio-hojita.linux/index.html
+       sudo bash dns.sh --publicar
+  4. SSH para root solo con llave:
+       sudo bash ssh-generator.sh
+     Menú 1 y luego llave 3 (archivo .pub). Si el .pub viene de Windows,
+     antes quitarle el fin de línea de Windows:
+       sed -i 's/\r$//' ~/llave_casa.pub
+  5. Comprobar:
+       dig @IP_VM hojita.linux +short
+       curl -s http://hojita.linux | grep -o '<title>.*</title>'
+
+EN WINDOWS (PowerShell como administrador)
+  Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses "IP_VM"
+  Clear-DnsClientCache
+  nslookup hojita.linux
+  Abrir en Chrome: http://hojita.linux
+  ssh -i "$env:USERPROFILE\.ssh\llave_casa" root@IP_VM
+  Al terminar, regresar el DNS normal:
+  Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ResetServerAddresses
+
+IP_VM según la red
+  Casa:    192.168.1.86
+  Escuela: 10.10.24.157
+  Al cambiar de red:
+    sudo bash dns.sh --restaurar
+    sudo bash dns.sh
+  index.html se conserva.
